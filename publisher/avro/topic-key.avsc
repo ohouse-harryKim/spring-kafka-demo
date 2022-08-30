@@ -1,0 +1,13 @@
+{
+  "name": "TopicKey",
+  "doc": "테스트 토픽 key",
+  "type": "record",
+  "namespace": "se.ohou.springkafkademo.models",
+  "fields": [
+    {
+      "type": "string",
+      "name": "key",
+      "doc": "key"
+    }
+  ]
+}

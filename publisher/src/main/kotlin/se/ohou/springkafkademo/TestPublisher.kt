@@ -9,16 +9,27 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
+import se.ohou.springkafkademo.models.TopicKey
+import se.ohou.springkafkademo.models.TopicValue
+import java.time.OffsetDateTime
 
 @Component
 class TestPublisher(
-    private val kafkaTemplate: KafkaTemplate<String, String>,
+    private val kafkaTemplate: KafkaTemplate<TopicKey, TopicValue>,
 ) {
 
     @Value("\${kafka.topic}")
     private lateinit var topic: String
 
-    fun publish(data: String?) = kafkaTemplate.send(topic, data)
+    fun publish(data: String?) = kafkaTemplate.send(
+        topic,
+        TopicKey(
+            OffsetDateTime.now().toInstant().epochSecond.toString()
+        ),
+        TopicValue(
+            data
+        )
+    )
 }
 
 @RequestMapping

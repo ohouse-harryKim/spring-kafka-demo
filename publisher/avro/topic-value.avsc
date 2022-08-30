@@ -1,0 +1,14 @@
+{
+  "name": "TopicValue",
+  "doc": "테스트 토픽 value",
+  "type": "record",
+  "namespace": "se.ohou.springkafkademo.models",
+  "fields": [
+    {
+      "type": ["null", "string"],
+      "name": "value",
+      "default": null,
+      "doc": "value"
+    }
+  ]
+}

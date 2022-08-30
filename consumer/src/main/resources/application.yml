@@ -1,0 +1,22 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+
+    consumer:
+      key-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      properties:
+        specific.avro.reader: true
+
+    properties:
+        schema.registry.url: http://localhost:8085
+  application:
+    name: spring-kafka-demo
+
+kafka:
+  topic: topic1
+
+logging:
+  level:
+    se.ohou: debug
+
