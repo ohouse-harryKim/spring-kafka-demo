@@ -11,10 +11,10 @@ buildscript {
 }
 
 plugins {
-    id("org.springframework.boot") version "2.7.3"
+    id("org.springframework.boot") version "2.7.6"
     id("io.spring.dependency-management") version "1.0.13.RELEASE"
-    kotlin("jvm") version "1.7.10"
-    kotlin("plugin.spring") version "1.7.10"
+    kotlin("jvm") version "1.7.20"
+    kotlin("plugin.spring") version "1.7.20"
 
     // avro
     id("com.github.davidmc24.gradle.plugin.avro") version "1.3.0"

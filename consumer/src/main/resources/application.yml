@@ -7,9 +7,12 @@ spring:
       value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
       properties:
         specific.avro.reader: true
-
     properties:
         schema.registry.url: http://localhost:8085
+    producer:
+      key-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+
   application:
     name: spring-kafka-demo
 
@@ -19,4 +22,3 @@ kafka:
 logging:
   level:
     se.ohou: debug
-
